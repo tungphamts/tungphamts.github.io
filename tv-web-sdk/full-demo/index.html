@@ -101,7 +101,7 @@
     <div id="result-liveness-detection"></div>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://unpkg.com/@tsocial/trustvision-sdk@2.10.1/dist/trustvision-sdk.umd.js"></script>
-    <script src="../../build/tvweb-sdk.vib.standalone.min.js"></script>
+    <script src="https://unpkg.com/@tsocial/tvweb-sdk.vib@5.5.2/build/tvweb-sdk.vib.standalone.min.js"></script>
     <script>
       const keys = [
         {
@@ -136,6 +136,7 @@
         enableAntiDebug: false,
       });
       window.tv = tv;
+      tv.runWarmUpReadIDCard();
       const resultExtractIdInfoEl = document.getElementById(
         "result-extract-id-info"
       );
