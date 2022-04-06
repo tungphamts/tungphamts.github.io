@@ -1,0 +1,80 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.dot-windmill {
+  position: relative;
+  /* top: -10px; */
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  transform-origin: 5px 15px;
+  animation: dotWindmill 2s infinite linear;
+  /* margin-left: 100px;
+  margin-top: -10px; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.dot-windmill::before,
+.dot-windmill::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+
+.dot-windmill::before {
+  left: -8.66px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+}
+
+.dot-windmill::after {
+  left: 8.66px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+}
+
+@keyframes dotWindmill {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(720deg) translate3d(0, 0, 0);
+  }
+}
+
+#btn-start-liveness, #btn_start_id_card {
+  border: none;
+  outline: none;
+  border-radius: 27.5px;
+  padding: 12px 13px;
+  background: linear-gradient(180deg,#00e8ff 0%,#00aeff 100%);
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 120px;
+  font-weight: bold;
+}
+#btn-start-liveness:hover {
+  box-shadow: 0 5px 18px 0 rgb(0 232 255 / 15%), 1px 9px 15px 0 #0014ffab;
+}
+#result-liveness-detection{
+margin-top: 20px;
+}
