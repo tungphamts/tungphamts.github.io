@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./style.css"  />
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script src="https://unpkg.com/@tsocial/trustvision-sdk@2.10.1/dist/trustvision-sdk.umd.js"></script>
-  <script src="https://unpkg.com/@tsocial/tvweb-sdk@5.7.5/build/tvweb-sdk.standalone.min.js"></script>
+  <script src="https://unpkg.com/@tsocial/tvweb-sdk@5.7.4/build/tvweb-sdk.standalone.min.js"></script>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -127,6 +127,11 @@
   <div class="dot-windmill"></div>
 </div>
 <div id="result-liveness-detection"></div>
+
+<hr />
+<button onclick="refreshPage()" id="btn_refresh">
+  Refresh page
+</button>
 <script>
   const keys = [
     {
@@ -172,6 +177,7 @@
   });
   window.tv = tv;
   tv.runPreloadEKYCResources();
+  tv.runWarmUpReadIDCard();
   const resultExtractIdInfoEl = document.getElementById(
     "result-extract-id-info"
   );
@@ -331,6 +337,10 @@
       console.log('UI only')
       tv.readIDCardUIOnly(commonProps)
     }
+  }
+
+  function refreshPage() {
+      window.location.reload();
   }
 
   function startLivenessDetection() {

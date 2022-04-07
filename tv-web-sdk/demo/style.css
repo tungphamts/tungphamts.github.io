@@ -57,7 +57,7 @@ body {
   }
 }
 
-#btn-start-liveness, #btn_start_id_card {
+#btn-start-liveness, #btn_start_id_card, #btn_refresh {
   border: none;
   outline: none;
   border-radius: 27.5px;
