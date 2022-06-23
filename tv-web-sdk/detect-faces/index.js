@@ -23,6 +23,9 @@ function showResult(result) {
   var ctx = c.getContext("2d");
   ctx.drawImage(img, 0, 0);
   var faces = result.data.image.faces
+  if (faces == null) {
+    return;
+  }
   for (var i = 0; i < faces.length; i++) {
     var face = faces[i];
     var boundingBox = face.bounding_box;
