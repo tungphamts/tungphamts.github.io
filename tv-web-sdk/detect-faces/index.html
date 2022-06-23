@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detect faces</title>
+    <meta charset="UTF-8" />
+    <script src="index.js"></script>
+    <script src="trustvision-sdk.umd.js"></script>
+    <style>
+      .input{
+        width: 30%;
+        margin: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Please fill out the following lines</h2>
+    Access Key: <input type="text" id="access_key" class="input" value="d69a63c1-e5d5-4f39-9322-f8fa9e4b0d5a"/>
+    <br/>
+    Secret Key: <input type="text" id="secret_key" class="input"/>
+    <br/>
+    URL: <input type="text" id="url" class="input" value="https://tv-testing.trustingsocial.com/api">
+    <br/>
+    <h2>And then select image</h2>
+    <input
+      type="file"
+      id="browse_img"
+      accept="image/*"
+      onchange="readURL(this);"
+    />
+    <br/>
+    <img id="img" style="display:none;" crossorigin="anonymous" />
+    <br />
+    <h2>Detect faces result:</h2>
+    <canvas id="myCanvas" style="border: 1px solid #d3d3d3;" />
+    
+  </body>
+</html>
